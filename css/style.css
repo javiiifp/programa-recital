@@ -6,6 +6,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100vw;
     overflow: hidden;
     font-family: sans-serif;
 }
@@ -36,28 +37,29 @@ body {
 #zoom-btn {
     position: fixed;
     bottom: 30px;
-    right: 20px;
+    right: 30px;
     z-index: 1000;
-    padding: 12px 24px;
+    width: 56px;
+    height: 56px;
     background-color: #ffffff;
     color: #121212;
     border: none;
-    border-radius: 50px;
-    font-size: 16px;
-    font-weight: bold;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    cursor: pointer;
-    transition: all 0.3s ease;
+    border-radius: 50%;
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 8px;
-}
-
-#zoom-btn:active {
-    transform: scale(0.95);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
 }
 
 #zoom-btn.activo {
-    background-color: #e74c3c;
-    color: white;
+    background-color: #333;
+    color: #fff;
+}
+
+@media (max-height: 600px) {
+    #book {
+        transform: translateY(-20px);
+    }
 }

@@ -1,30 +1,27 @@
 document.addEventListener('DOMContentLoaded', function() {
     const bookElement = document.getElementById('book');
     const zoomContainer = document.getElementById('zoom-container');
-    const zoomBtn = document.getElementById('zoom-btn');
+    const zoomBtn = document.getElementById('zoom-btn');const iconContainer = document.getElementById('zoom-icon-container');
+
+    const iconExpand = `<svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect></svg>`;
+    const iconShrink = `<svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"></path></svg>`;
 
     const pageFlip = new St.PageFlip(bookElement, {
         width: 420,
         height: 594,
         size: "stretch",
-        minWidth: 300,
-        maxWidth: 1000,
-        minHeight: 450,
-        maxHeight: 1500,
-        maxShadowOpacity: 0.2,
         showCover: false,
         mobileScrollSupport: true,
-        flippingTime: 500,
+        flippingTime: 400,
         usePortrait: true
     });
 
     pageFlip.loadFromHTML(document.querySelectorAll('.page'));
 
     const panzoom = Panzoom(zoomContainer, {
-        maxScale: 3,
+        maxScale: 2,
         minScale: 1,
-        contain: 'outside',
-        cursor: 'default'
+        contain: 'outside'
     });
 
     panzoom.setOptions({ disablePan: true, disableZoom: true });
@@ -36,13 +33,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (isZoomed) {
             panzoom.setOptions({ disablePan: false, disableZoom: false });
-            panzoom.zoom(2, { animate: true }); 
+            panzoom.zoom(1.5, { animate: true }); 
             
-            zoomBtn.innerHTML = '❌ Cerrar';
             zoomBtn.classList.add('activo');
-
-            bookElement.style.pointerEvents = 'none'; 
-            
+            iconContainer.innerHTML = iconShrink;
+            bookElement.style.pointerEvents = 'none';            
         } else {
             panzoom.reset({ animate: true });
             
@@ -51,8 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 bookElement.style.pointerEvents = 'auto';
             }, 300);
 
-            zoomBtn.innerHTML = '🔍 Ampliar';
             zoomBtn.classList.remove('activo');
+            iconContainer.innerHTML = iconExpand;
         }
     });
 
