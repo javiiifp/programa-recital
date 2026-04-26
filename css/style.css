@@ -32,3 +32,32 @@ body {
     display: block;
     object-fit: cover;
 }
+
+#zoom-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    z-index: 1000;
+    padding: 12px 24px;
+    background-color: #ffffff;
+    color: #121212;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#zoom-btn:active {
+    transform: scale(0.95);
+}
+
+#zoom-btn.activo {
+    background-color: #e74c3c;
+    color: white;
+}
