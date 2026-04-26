@@ -4,7 +4,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const zoomBtn = document.getElementById('zoom-btn');
     const iconContainer = document.getElementById('zoom-icon-container');
 
-    const iconoAmpliar = `<svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6" /><path d="M9 21H3v-6" /><path d="M15 21h6v-6" /><path d="M9 3H3v6" /></svg>`;
+    const iconoAmpliar = `<svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 3 21 3 21 9"></polyline>
+        <polyline points="9 21 3 21 3 15"></polyline>
+        <line x1="21" y1="3" x2="14" y2="10"></line>
+        <line x1="3" y1="21" x2="10" y2="14"></line>
+    </svg>`;
     
     const iconoReducir = `<svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <polyline points="4 14 10 14 10 20"></polyline>
@@ -12,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <line x1="14" y1="10" x2="21" y2="3"></line>
         <line x1="10" y1="14" x2="3" y2="21"></line>
     </svg>`;
-    
+
     const pageFlip = new St.PageFlip(bookElement, {
         width: 350,           
         height: 495,          
