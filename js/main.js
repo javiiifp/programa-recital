@@ -4,6 +4,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const zoomBtn = document.getElementById('zoom-btn');
     const iconContainer = document.getElementById('zoom-icon-container');
 
+    const iconoAmpliar = `<svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6" /><path d="M9 21H3v-6" /><path d="M15 21h6v-6" /><path d="M9 3H3v6" /></svg>`;
+    
+    const iconoReducir = `<svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h6v6"/><path d="M20 10h-6V4"/><path d="M14 10h6v-6"/><path d="M10 14H4v6"/></svg>`;
+
     const pageFlip = new St.PageFlip(bookElement, {
         width: 350,           
         height: 495,          
@@ -14,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         size: "stretch",
         showCover: false,
         mobileScrollSupport: true,
-        usePortrait: true,
+        usePortrait: true,    
         flippingTime: 400
     });
 
@@ -39,6 +43,8 @@ document.addEventListener('DOMContentLoaded', function() {
             panzoom.zoom(1.5, { animate: true }); 
             
             zoomBtn.classList.add('activo');
+            
+            iconContainer.innerHTML = iconoReducir;
 
             bookElement.style.pointerEvents = 'none';            
         } else {
@@ -50,6 +56,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 300);
 
             zoomBtn.classList.remove('activo');
+            
+            iconContainer.innerHTML = iconoAmpliar;
         }
     });
 
