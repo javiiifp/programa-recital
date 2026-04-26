@@ -7,6 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const pageFlip = new St.PageFlip(bookElement, {
         width: 700,
         height: 990,
+        maxwidth: 700,
+        maxheight: 990,
+        minwidth: 315,
+        minheight: 450,
         size: "stretch",
         showCover: false,
         mobileScrollSupport: true,
