@@ -11,7 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
         maxHeight: 1500,
         maxShadowOpacity: 0.5,
         showCover: true,
-        mobileScrollSupport: true
+        mobileScrollSupport: true,
+
+        flippingTime: 500,
+        maxShadowOpacity: 0.2,
+        usePortrait: true
     });
 
     pageFlip.loadFromHTML(document.querySelectorAll('.page'));
