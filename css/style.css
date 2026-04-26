@@ -23,12 +23,12 @@ body {
 }
 
 .page {
-    background-color: white;
+    background-color: transparent;
 }
 
 .page img {
     width: 100%;
     height: 100%;
     display: block;
-    object-fit: contain;
+    object-fit: cover;
 }
