@@ -1,21 +1,34 @@
 body {
     background-color: #1a1a1a;
     margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     overflow: hidden;
+    font-family: sans-serif;
 }
 
 .container {
-    width: 90vw;
-    height: 80vh;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#book {
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.page {
+    background-color: white;
 }
 
 .page img {
     width: 100%;
     height: 100%;
     display: block;
-    user-select: none;
+    object-fit: contain;
 }
