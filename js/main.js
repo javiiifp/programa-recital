@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         minHeight: 450,
         maxHeight: 1500,
         maxShadowOpacity: 0.2,
-        showCover: true,
+        showCover: false,
         mobileScrollSupport: true,
         flippingTime: 500,
         usePortrait: true
