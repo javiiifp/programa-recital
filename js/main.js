@@ -20,11 +20,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const pageFlip = new St.PageFlip(bookElement, {
         width: 350,           
-        height: 495,          
-        maxWidth: 800,        
-        maxHeight: 1132,       
-        minWidth: 250,        
-        minHeight: 353,       
+        height: 495,
+
+        maxWidth: 2000,        
+        maxHeight: 2828,       
+        minWidth: 200,        
+        minHeight: 282, 
+
         size: "stretch",
         showCover: false,
         mobileScrollSupport: true,
