@@ -21,10 +21,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const pageFlip = new St.PageFlip(bookElement, {
         width: 350,           
         height: 495,          
-        maxWidth: 700,        
-        maxHeight: 990,       
-        minWidth: 315,        
-        minHeight: 450,       
+        maxWidth: 800,        
+        maxHeight: 1132,       
+        minWidth: 250,        
+        minHeight: 353,       
         size: "stretch",
         showCover: false,
         mobileScrollSupport: true,
@@ -56,13 +56,16 @@ document.addEventListener('DOMContentLoaded', function() {
             
             iconContainer.innerHTML = iconoReducir;
 
-            bookElement.style.pointerEvents = 'none';            
+            bookElement.style.pointerEvents = 'none';
+
+            document.body.style.overflow = 'hidden';
         } else {
             panzoom.reset({ animate: true });
             
             setTimeout(() => {
                 panzoom.setOptions({ disablePan: true, disableZoom: true });
                 bookElement.style.pointerEvents = 'auto';
+                document.body.style.overflowY = 'auto';
             }, 300);
 
             zoomBtn.classList.remove('activo');
